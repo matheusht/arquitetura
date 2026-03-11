@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XPlay Academia | Forje o Seu Legado</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #050505; /* Carbon Black */
+color: #e5e5e5;
+}
+/* Custom scrollbar for raw feel */
+::-webkit-scrollbar {
+width: 8px;
+}
+::-webkit-scrollbar-track {
+background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+background: #333;
+}
+::-webkit-scrollbar-thumb:hover {
+background: #dc2626;
+}
+/* Details/Summary animation overrides */
+details > summary {
+list-style: none;
+}
+details > summary::-webkit-details-marker {
+display: none;
+}
+.text-stroke {
+-webkit-text-stroke: 1px rgba(255,255,255,0.1);
+color: transparent;
+}
+</style></head>
+<body class="antialiased selection:bg-red-600 selection:text-white bg-neutral-950">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-neutral-950/90 backdrop-blur-sm border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-semibold tracking-tighter text-white uppercase flex items-center gap-2">
+                <i data-lucide="dumbbell" class="w-6 h-6 text-red-600"></i>
+                XPlay Academia
+            </a>
+            
+            <div class="hidden md:flex gap-8 text-xs font-medium tracking-widest uppercase text-neutral-400">
+                <a href="#essence" class="hover:text-red-500 transition-colors">Sobre</a>
+                <a href="#infrastructure" class="hover:text-red-500 transition-colors">Infraestrutura</a>
+                <a href="#methodology" class="hover:text-red-500 transition-colors">Método</a>
+                <a href="#plans" class="hover:text-red-500 transition-colors">Planos</a>
+            </div>
+
+            <a href="#plans" class="hidden md:block bg-white text-black px-6 py-3 text-xs font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-colors rounded-none">
+                Comece Agora
+            </a>
+            
+            <!-- Mobile Menu Icon -->
+            <button class="md:hidden text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" alt="Hardcore Training" class="w-full h-full object-cover opacity-40 grayscale">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+            <!-- Grid Overlay -->
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 border border-neutral-800 bg-neutral-900/50 mb-8 backdrop-blur-sm">
+                <span class="w-2 h-2 bg-red-600"></span>
+                <span class="text-xs uppercase tracking-widest text-neutral-300 font-medium">Forjando Força de Elite Desde 2014</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-8xl font-semibold uppercase tracking-tighter text-white mb-6 leading-none">
+                Forje o Seu <br> <span class="text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-600">Legado</span>
+            </h1>
+            
+            <p class="text-neutral-400 text-sm md:text-lg max-w-xl mx-auto mb-10 font-light leading-relaxed">
+                Força bruta. Disciplina inigualável. O campo de treinamento para aqueles que recusam a mediocridade. Entre no vazio e reconstrua-se.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#plans" class="w-full md:w-auto bg-red-600 text-white px-8 py-4 text-xs font-semibold uppercase tracking-widest hover:bg-red-700 transition-all rounded-none border border-red-600">
+                    Junte-se a Nós
+                </a>
+                <a href="#essence" class="w-full md:w-auto bg-transparent text-white px-8 py-4 text-xs font-semibold uppercase tracking-widest hover:bg-neutral-900 transition-all rounded-none border border-neutral-700">
+                    Explorar Instalações
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-6 h-6 text-neutral-500"></i>
+        </div>
+    </section>
+
+    <!-- Essence / About Section -->
+    <section id="essence" class="py-24 bg-neutral-950 border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl md:text-5xl font-semibold uppercase tracking-tighter text-white mb-6">
+                    Disciplina Acima da <span class="text-red-600">Motivação</span>
+                </h2>
+                <div class="space-y-6 text-neutral-400 font-light text-sm md:text-base leading-relaxed">
+                    <p>
+                        A XPlay Academia não é um clube social. É uma catedral de ferro projetada para um único propósito: a reconstrução total do ser através do esforço físico.
+                    </p>
+                    <p>
+                        Removemos as comodidades que o distraem. Sem bares de sucos, sem conversas na sauna. Apenas aço frio, anilhas pesadas e uma comunidade unida pelo sofrimento compartilhado do crescimento.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6 mt-12">
+                    <div class="border-l-2 border-red-600 pl-4">
+                        <span class="block text-3xl font-semibold text-white tracking-tight">24/7</span>
+                        <span class="text-xs uppercase tracking-widest text-neutral-500">Controle de Acesso</span>
+                    </div>
+                    <div class="border-l-2 border-red-600 pl-4">
+                        <span class="block text-3xl font-semibold text-white tracking-tight">5K+</span>
+                        <span class="text-xs uppercase tracking-widest text-neutral-500">Libras de Anilhas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative h-96 w-full">
+                <div class="absolute top-4 -right-4 w-full h-full border border-neutral-800 z-0"></div>
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop" class="relative z-10 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Gym Atmosphere">
+            </div>
+        </div>
+    </section>
+
+    <!-- Infrastructure -->
+    <section id="infrastructure" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <span class="text-red-600 text-xs font-semibold uppercase tracking-widest mb-2 block">O Arsenal</span>
+                    <h2 class="text-3xl md:text-4xl font-semibold uppercase tracking-tighter text-white">
+                        Construído para <br> Levantamento Pesado
+                    </h2>
+                </div>
+                <p class="text-neutral-400 text-sm max-w-sm text-right md:text-left font-light">
+                    Equipamento de nível industrial. Anilhas calibradas. Plataformas de deadlift. Sem frescuras, apenas funcionalidade.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+                <!-- Card 1 -->
+                <div class="group relative aspect-[4/5] bg-neutral-900 overflow-hidden border border-neutral-900 hover:border-red-600 transition-colors duration-300">
+                    <img src="https://images.unsplash.com/photo-1596357395217-80de13130e92?q=80&w=2071&auto=format&fit=crop" class="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 grayscale" alt="Weights">
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent">
+                        <h3 class="text-lg font-semibold uppercase tracking-tight text-white mb-1">Pesos Livres</h3>
+                        <p class="text-xs text-neutral-400 uppercase tracking-widest">Halteres de até 150 libras</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative aspect-[4/5] bg-neutral-900 overflow-hidden border border-neutral-900 hover:border-red-600 transition-colors duration-300">
+                    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=2069&auto=format&fit=crop" class="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 grayscale" alt="Racks">
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent">
+                        <h3 class="text-lg font-semibold uppercase tracking-tight text-white mb-1">Racks de Potência</h3>
+                        <p class="text-xs text-neutral-400 uppercase tracking-widest">Monolifts & Bancos de Competição</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative aspect-[4/5] bg-neutral-900 overflow-hidden border border-neutral-900 hover:border-red-600 transition-colors duration-300">
+                    <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=2069&auto=format&fit=crop" class="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 grayscale" alt="Conditioning">
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent">
+                        <h3 class="text-lg font-semibold uppercase tracking-tight text-white mb-1">O Pátio</h3>
+                        <p class="text-xs text-neutral-400 uppercase tracking-widest">Trenós, Pneus, Yokes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology -->
+    <section id="methodology" class="py-24 bg-neutral-950 border-t border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-4">
+                    <h2 class="text-3xl font-semibold uppercase tracking-tighter text-white mb-6">
+                        A Metodologia <br> de Ferro
+                    </h2>
+                    <p class="text-neutral-400 text-sm font-light leading-relaxed mb-8">
+                        Combinamos a intensidade da velha escola com a biomecânica moderna. Nosso espaço é otimizado para movimentos compostos e sobrecarga progressiva. Sem truques.
+                    </p>
+                    <a href="#plans" class="text-red-600 uppercase text-xs font-semibold tracking-widest border-b border-red-600 pb-1 hover:text-white hover:border-white transition-colors">
+                        Ver Opções de Planos
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-800 border border-neutral-800">
+                    <!-- Feature 1 -->
+                    <div class="bg-neutral-950 p-8 hover:bg-neutral-900 transition-colors">
+                        <i data-lucide="anchor" class="w-8 h-8 text-white mb-6"></i>
+                        <h3 class="text-lg font-medium text-white mb-3 uppercase tracking-tight">A Base Primeiro</h3>
+                        <p class="text-neutral-500 text-sm font-light leading-relaxed">
+                            Dominar os três grandes: Agachamento, Supino, Levantamento Terra. A técnica é fundamental antes que a intensidade seja aplicada.
+                        </p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-neutral-950 p-8 hover:bg-neutral-900 transition-colors">
+                        <i data-lucide="flame" class="w-8 h-8 text-white mb-6"></i>
+                        <h3 class="text-lg font-medium text-white mb-3 uppercase tracking-tight">Alta Intensidade</h3>
+                        <p class="text-neutral-500 text-sm font-light leading-relaxed">
+                            Agressão controlada. Treinamento até a falha. Expandindo os limites do seu sistema nervoso central.
+                        </p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bg-neutral-950 p-8 hover:bg-neutral-900 transition-colors">
+                        <i data-lucide="users" class="w-8 h-8 text-white mb-6"></i>
+                        <h3 class="text-lg font-medium text-white mb-3 uppercase tracking-tight">A Tribo</h3>
+                        <p class="text-neutral-500 text-sm font-light leading-relaxed">
+                            Ferro afia ferro. Cerque-se de indivíduos que o incentivam a ser mais forte, não mais confortável.
+                        </p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="bg-neutral-950 p-8 hover:bg-neutral-900 transition-colors">
+                        <i data-lucide="brain-circuit" class="w-8 h-8 text-white mb-6"></i>
+                        <h3 class="text-lg font-medium text-white mb-3 uppercase tracking-tight">Mentalidade</h3>
+                        <p class="text-neutral-500 text-sm font-light leading-relaxed">
+                            O peso não se importa de como você se sente. Disciplina é fazer o que precisa ser feito, independentemente da emoção.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans & Pricing -->
+    <section id="plans" class="py-24 bg-black relative">
+        <!-- Geometric decoration -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-neutral-900/20 skew-x-12 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-semibold uppercase tracking-tighter text-white mb-4">Planos</h2>
+                <p class="text-neutral-500 text-sm uppercase tracking-widest">Comprometa-se com o processo</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Standard Plan -->
+                <div class="border border-neutral-800 bg-neutral-950 p-8 flex flex-col justify-between hover:border-neutral-600 transition-colors">
+                    <div>
+                        <h3 class="text-xl font-medium text-white uppercase tracking-tight mb-2">Padrão</h3>
+                        <div class="text-4xl font-semibold text-white tracking-tighter mb-6">$49<span class="text-lg text-neutral-500 font-normal">/mês</span></div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3 text-sm text-neutral-400">
+                                <i data-lucide="check" class="w-5 h-5 text-neutral-600 shrink-0"></i>
+                                Acesso Livre à Academia (6h - 22h)
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-neutral-400">
+                                <i data-lucide="check" class="w-5 h-5 text-neutral-600 shrink-0"></i>
+                                Acesso aos Vestiários
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-neutral-400">
+                                <i data-lucide="check" class="w-5 h-5 text-neutral-600 shrink-0"></i>
+                                Pesos Livres Area
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="block w-full text-center border border-neutral-700 text-white py-4 text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-black transition-all rounded-none">
+                        Selecionar Padrão
+                    </a>
+                </div>
+
+                <!-- Elite Plan -->
+                <div class="border-2 border-red-600 bg-neutral-950 p-8 flex flex-col justify-between relative">
+                    <div class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold uppercase px-3 py-1 tracking-widest">
+                        Mais Popular
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-medium text-white uppercase tracking-tight mb-2">Elite de Ferro</h3>
+                        <div class="text-4xl font-semibold text-white tracking-tighter mb-6">$79<span class="text-lg text-neutral-500 font-normal">/mês</span></div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3 text-sm text-white">
+                                <i data-lucide="check" class="w-5 h-5 text-red-600 shrink-0"></i>
+                                Acesso 24/7 com Cartão de Acesso
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-white">
+                                <i data-lucide="check" class="w-5 h-5 text-red-600 shrink-0"></i>
+                                Privilégios para Convidados (Fins de semana)
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-white">
+                                <i data-lucide="check" class="w-5 h-5 text-red-600 shrink-0"></i>
+                                Prioridade na Zona de Powerlifting
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-white">
+                                <i data-lucide="check" class="w-5 h-5 text-red-600 shrink-0"></i>
+                                1 Sessão Gratuita com Personal / Mês
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="block w-full text-center bg-red-600 text-white py-4 text-xs font-semibold uppercase tracking-widest hover:bg-red-700 transition-all rounded-none">
+                        Junte-se à Elite
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 bg-neutral-950 border-t border-neutral-900">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-2xl font-semibold uppercase tracking-tighter text-white mb-12 text-center">Perguntas Frequentes</h2>
+            
+            <div class="space-y-4">
+                <!-- Question 1 -->
+                <details class="group bg-neutral-900 border border-neutral-800 open:border-red-600/50 transition-colors">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white uppercase text-sm tracking-wide">
+                        <span>Existe algum contrato?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500"></i>
+                        </span>
+                    </summary>
+                    <div class="text-neutral-400 text-sm font-light p-6 pt-0 leading-relaxed border-t border-transparent group-open:border-neutral-800">
+                        Oferecemos planos com compromisso mensal e de 12 meses. O plano Elite oferece desconto para o compromisso anual.
+                    </div>
+                </details>
+
+                <!-- Question 2 -->
+                <details class="group bg-neutral-900 border border-neutral-800 open:border-red-600/50 transition-colors">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white uppercase text-sm tracking-wide">
+                        <span>Vocês oferecem treinamento com personal?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500"></i>
+                        </span>
+                    </summary>
+                    <div class="text-neutral-400 text-sm font-light p-6 pt-0 leading-relaxed border-t border-transparent group-open:border-neutral-800">
+                        Sim. Nossos treinadores são atletas de elite em powerlifting e fisiculturismo, não instrutores genéricos de fitness. Eles focam na mecânica da força e hipertrofia.
+                    </div>
+                </details>
+
+                <!-- Question 3 -->
+                <details class="group bg-neutral-900 border border-neutral-800 open:border-red-600/50 transition-colors">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white uppercase text-sm tracking-wide">
+                        <span>Qual é o código de vestimenta?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500"></i>
+                        </span>
+                    </summary>
+                    <div class="text-neutral-400 text-sm font-light p-6 pt-0 leading-relaxed border-t border-transparent group-open:border-neutral-800">
+                        Use o que você treina. Sem sandálias. Camisetas são obrigatórias nos bancos. O uso de magnésio é encorajado.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-neutral-900 py-16">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <a href="#" class="text-2xl font-semibold tracking-tighter text-white uppercase flex items-center gap-2 mb-6">
+                    <i data-lucide="dumbbell" class="w-6 h-6 text-red-600"></i>
+                    XPlay Academia
+                </a>
+                <p class="text-neutral-500 text-sm max-w-xs font-light mb-6">
+                    Forjando força, disciplina e comunidade desde 2014. O principal destino para treinamentos sérios.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-neutral-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-neutral-400 hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-neutral-400 hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white text-xs font-semibold uppercase tracking-widest mb-6">Localização</h4>
+                <address class="text-neutral-500 text-sm font-light not-italic leading-relaxed">
+                    Rua Vergueiro, 3030<br>
+                    Vila Mariana, São Paulo - SP<br>
+                    04101-300, Brasil
+                </address>
+            </div>
+
+            <div>
+                <h4 class="text-white text-xs font-semibold uppercase tracking-widest mb-6">Contato</h4>
+                <p class="text-neutral-500 text-sm font-light leading-relaxed">
+                    contato@xplayacademia.com.br<br>
+                    (11) 98765-4321
+                </p>
+                <div class="mt-4">
+                    <span class="inline-block w-2 h-2 rounded-full bg-green-500 mr-2"></span>
+                    <span class="text-neutral-400 text-xs">Aberto Agora</span>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-neutral-900 text-center md:text-left">
+            <p class="text-neutral-600 text-xs uppercase tracking-widest">© 2024 XPlay Academia. Todos os Direitos Reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

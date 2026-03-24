@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avalie nosso atendimento - Dra. Bruna Cintra Torres</title>
+    <!-- Modern Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0A6B70; /* Deep Teal */
+            --primary-light: #169299; /* Cyan / Light Teal */
+            --bg-color: #E6F4F4; /* Ultra light cyan background */
+            --text-dark: #1F2937;
+            --text-light: #4B5563;
+            --gold: #D4AF37;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #FFFFFF 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(10, 107, 112, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .logo-placeholder {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        h2 { 
+            color: var(--primary); 
+            margin-bottom: 12px; 
+            font-size: 2rem; 
+            font-weight: 700;
+        }
+
+        p { 
+            color: var(--text-light); 
+            margin-bottom: 30px; 
+            font-size: 1.1rem; 
+            line-height: 1.5;
+        }
+
+        .rating-container {
+            display: flex;
+            flex-direction: row-reverse; /* For CSS sibling selector magic */
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .rating-container input { display: none; }
+
+        .rating-container label {
+            font-size: 3.5rem;
+            color: #E5E7EB; /* Light Gray */
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        /* Hover and Checked states */
+        .rating-container label:hover,
+        .rating-container label:hover ~ label,
+        .rating-container input:checked ~ label {
+            color: var(--gold);
+            transform: scale(1.1);
+        }
+
+        #internal-form-container {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+            text-align: left;
+            animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-prompt {
+            margin-bottom: 10px; 
+            font-weight: 600; 
+            color: var(--primary);
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #D1D5DB;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            background: #F9FAFB;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(22, 146, 153, 0.1);
+            background: #FFFFFF;
+        }
+
+        button {
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            color: #fff;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(10, 107, 112, 0.2);
+        }
+
+        button:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 14px 25px rgba(10, 107, 112, 0.3);
+        }
+
+        .success-message {
+            display: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-align: center;
+            animation: slideUp 0.4s ease forwards;
+        }
+
+        .success-icon {
+            font-size: 3rem;
+            color: var(--primary-light);
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="review-card">
+    <div class="logo-placeholder"><i class="fa-solid fa-tooth"></i></div>
+    
+    <div id="rating-step">
+        <h2>Como foi sua consulta?</h2>
+        <p>A sua opinião é muito importante para nós. Por favor, avalie seu atendimento de 1 a 5 estrelas.</p>
+        
+        <div class="rating-container">
+            <!-- Note: Values are reversed in HTML so CSS sibling selectors work left-to-right visually -->
+            <input type="radio" id="star5" name="rating" value="5" />
+            <label for="star5" class="fas fa-star" title="5 estrelas"></label>
+            
+            <input type="radio" id="star4" name="rating" value="4" />
+            <label for="star4" class="fas fa-star" title="4 estrelas"></label>
+            
+            <input type="radio" id="star3" name="rating" value="3" />
+            <label for="star3" class="fas fa-star" title="3 estrelas"></label>
+            
+            <input type="radio" id="star2" name="rating" value="2" />
+            <label for="star2" class="fas fa-star" title="2 estrelas"></label>
+            
+            <input type="radio" id="star1" name="rating" value="1" />
+            <label for="star1" class="fas fa-star" title="1 estrela"></label>
+        </div>
+    </div>
+
+    <!-- Internal Feedback Form for 1-3 Stars -->
+    <div id="internal-form-container">
+        <p class="form-prompt">Sentimos muito por não termos alcançado a excelência. Como podemos melhorar?</p>
+        <input type="text" id="fb-nome" placeholder="Seu Nome">
+        <input type="tel" id="fb-telefone" placeholder="Seu Telefone / WhatsApp">
+        <textarea id="fb-msg" rows="4" placeholder="Conta pra gente o que aconteceu..."></textarea>
+        <button id="submit-feedback">Enviar Feedback</button>
+    </div>
+    
+    <!-- Success Message after Form Submission -->
+    <div class="success-message" id="success-msg">
+        <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+        Obrigado pelo seu feedback!<br>Nossa equipe entrará em contato.
+    </div>
+</div>
+
+<script>
+    // The public Google Review URL provided by the user
+    const GOOGLE_REVIEW_URL = "https://share.google/DeIvcFrnH29q7N9NL";
+    
+    document.querySelectorAll('input[name="rating"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const stars = parseInt(this.value);
+            
+            if (stars >= 4) {
+                // Route to public Google Review!
+                window.location.href = GOOGLE_REVIEW_URL;
+            } else {
+                // Route to internal feedback, protecting the public ranking
+                document.getElementById('internal-form-container').style.display = 'flex';
+                // Lock the stars from being changed again if desired (optional)
+                document.querySelectorAll('.rating-container input').forEach(inp => inp.disabled = true);
+            }
+        });
+    });
+    
+    document.getElementById('submit-feedback').addEventListener('click', () => {
+        // Collect data here if connected to backend/email
+        const nome = document.getElementById('fb-nome').value;
+        const msg = document.getElementById('fb-msg').value;
+        
+        if(!msg) {
+            alert("Por favor, deixe um comentário para que possamos melhorar.");
+            return;
+        }
+
+        // Mock submission -> show success screen
+        document.getElementById('internal-form-container').style.display = 'none';
+        document.getElementById('rating-step').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
